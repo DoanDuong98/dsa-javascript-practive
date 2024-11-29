@@ -1,16 +1,18 @@
 // Ο(log n)
-
 function search(a,x) {
-    // arg1.sort((a,b) => a - b)
-    let n = a.length, l = 0, r = n-1;
-	while (l < r){
-		let mid = Math.floor((l+r)/2);
-        console.log(mid, a[mid])
+	let n = a.length, l = 0, r = n-1;
+	while (a[r] != a[l] && x >= a[l] && x <= a[r]){
+		let mid = l + (r-l)*(x-a[l])/(a[r]-a[l]);
 		if (a[mid] < x){
-			l = mid+1;
-		}
-		else{
-			r = mid;
+			l = mid + 1;
+		} else if (a[mid] > x) {
+			r = mid - 1;
+		} else{
+			if (mid > 0 && a[mid-1] == x){
+				r = mid - 1;
+			} else {
+				return mid;
+			}
 		}
 	}
 	if (a[l] == x){
