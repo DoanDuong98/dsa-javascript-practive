@@ -43,44 +43,21 @@ console.log(intersect([1,2,3,4,5], [6,7,8,9,10])); // []
 // GO
 
 // func intersect(nums1 []int, nums2 []int) []int {
-//     var map1 map[int]int
-//     var map2 map[int]int
-//     map1 = make(map[int]int)
-//     map2 = make(map[int]int)
-//     var result []int
+    // freq := make(map[int]int)
+    // result := []int{}
 
-//     for _, num1 := range nums1 {
-//         _, ok := map1[num1]
-//         if ok {
-//             map1[num1] = map1[num1] + 1
-//         } else {
-//             map1[num1] = 1
-//         }
-//     }
+    // // Count frequencies of nums1
+    // for _, num := range nums1 {
+    //         freq[num]++
+    // }
 
-//     for _, num2 := range nums2 {
-//         _, ok := map2[num2]
-//         if ok {
-//             map2[num2] = map2[num2] + 1
-//         } else {
-//             map2[num2] = 1
-//         }
-//     }
+    // // Iterate through nums2 and check if it exists in freq with count > 0
+    // for _, num := range nums2 {
+    //         if count, ok := freq[num]; ok && count > 0 {
+    //                 result = append(result, num)
+    //                 freq[num]-- 
+    //         }
+    // }
 
-//     for key, _ := range map1 {
-//         var min int
-//         value2, ok2 := map2[key]
-//         value1, _ := map1[key]
-//         if ok2 {
-//             if value2 > value1 { 
-//                 min = value1
-//             } else {
-//                 min = value2
-//             }
-//             for i:=0; i<min;i++ {
-//                 result = append(result, key)
-//             }
-//         }
-//     }
-//     return result
+    // return result
 // }
